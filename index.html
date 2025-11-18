@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宜昌文创 - 让三峡文化触手可及</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D94600',
+                        secondary: '#0F2E4F',
+                        accent: '#FFD166',
+                        light: '#F8F9FA',
+                        dark: '#212529',
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans SC"', 'sans-serif'],
+                        serif: ['"Ma Shan Zheng"', 'cursive'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .bg-gradient-yi {
+                background: linear-gradient(135deg, #0F2E4F 0%, #D94600 100%);
+            }
+            .carousel-item {
+                display: none;
+            }
+            .carousel-item.active {
+                display: block;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-light text-dark">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <i class="fa fa-paint-brush text-primary text-2xl"></i>
+                <span class="font-serif text-2xl font-bold text-secondary">宜昌文创</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="font-medium hover:text-primary transition-colors">首页</a>
+                <a href="#products" class="font-medium hover:text-primary transition-colors">产品中心</a>
+                <a href="#stories" class="font-medium hover:text-primary transition-colors">文创故事</a>
+                <a href="#videos" class="font-medium hover:text-primary transition-colors">三峡印象</a>
+            </nav>
+            <button class="md:hidden text-secondary text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 轮播图区域 - 已增加到5张图片 -->
+    <section class="relative overflow-hidden">
+        <div class="carousel relative h-[600px]">
+            <!-- 轮播项1 -->
+            <div class="carousel-item active absolute inset-0">
+                <img src="./pages/1.jpg" alt="宜昌三峡文创礼盒" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div class="text-center px-6">
+                        <h1 class="font-serif text-[clamp(2.5rem,5vw,4rem)] text-white font-bold text-shadow mb-4">三峡风情 文创宜昌</h1>
+                        <p class="text-white text-[clamp(1rem,2vw,1.25rem)] max-w-2xl mx-auto mb-8">将三峡的壮美与巴楚文化的深邃，凝结于每一件文创作品中</p>
+                        <a href="#products" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105">
+                            探索产品
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 轮播项2 -->
+            <div class="carousel-item absolute inset-0">
+                <img src="./pages/2.jpg" alt="宜昌非遗文创" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div class="text-center px-6">
+                        <h1 class="font-serif text-[clamp(2.5rem,5vw,4rem)] text-white font-bold text-shadow mb-4">非遗新生 创意宜昌</h1>
+                        <p class="text-white text-[clamp(1rem,2vw,1.25rem)] max-w-2xl mx-auto mb-8">传承巴楚非遗技艺，赋予传统文化现代创意表达</p>
+                        <a href="#stories" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105">
+                            聆听故事
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 轮播项3 -->
+            <div class="carousel-item absolute inset-0">
+                <img src="./pages/3.jpg" alt="宜昌文创体验" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div class="text-center px-6">
+                        <h1 class="font-serif text-[clamp(2.5rem,5vw,4rem)] text-white font-bold text-shadow mb-4">沉浸体验 遇见宜昌</h1>
+                        <p class="text-white text-[clamp(1rem,2vw,1.25rem)] max-w-2xl mx-auto mb-8">透过文创与视频，沉浸式感受宜昌的山水人文魅力</p>
+                        <a href="#videos" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105">
+                            观看视频
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 新增轮播项4 -->
+            <div class="carousel-item absolute inset-0">
+                <img src="https://picsum.photos/id/1061/1920/600" alt="宜昌山水风光" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div class="text-center px-6">
+                        <h1 class="font-serif text-[clamp(2.5rem,5vw,4rem)] text-white font-bold text-shadow mb-4">山水宜昌 诗意栖居</h1>
+                        <p class="text-white text-[clamp(1rem,2vw,1.25rem)] max-w-2xl mx-auto mb-8">三峡的雄伟与清江的秀美，共同勾勒出宜昌的诗意画卷</p>
+                        <a href="#products" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105">
+                            探索产品
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 新增轮播项5 -->
+            <div class="carousel-item absolute inset-0">
+                <img src="https://picsum.photos/id/1069/1920/600" alt="宜昌民俗文化" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div class="text-center px-6">
+                        <h1 class="font-serif text-[clamp(2.5rem,5vw,4rem)] text-white font-bold text-shadow mb-4">民俗瑰宝 文化传承</h1>
+                        <p class="text-white text-[clamp(1rem,2vw,1.25rem)] max-w-2xl mx-auto mb-8">土家摆手舞、峡江号子，流淌着千年的文化血脉</p>
+                        <a href="#stories" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105">
+                            聆听故事
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 轮播控制按钮 -->
+        <button class="carousel-prev absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/80 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center text-secondary shadow-lg z-10">
+            <i class="fa fa-chevron-left"></i>
+        </button>
+        <button class="carousel-next absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/80 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center text-secondary shadow-lg z-10">
+            <i class="fa fa-chevron-right"></i>
+        </button>
+
+        <!-- 轮播指示器 - 已增加到5个 -->
+        <div class="carousel-indicators absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+            <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white active" data-index="0"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-index="1"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-index="2"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-index="3"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-index="4"></button>
+        </div>
+    </section>
+
+    <!-- 品牌优势 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-[clamp(1.8rem,3vw,2.5rem)] text-secondary font-bold mb-4">我们的优势</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">深耕宜昌文化，打造兼具艺术价值与实用功能的文创产品，成为宜昌文化传播的优质载体</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-light rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-university text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-lg mb-2">文化溯源</h3>
+                    <p class="text-gray-600">深度挖掘三峡、巴楚、屈原等文化IP，确保产品文化底蕴</p>
+                </div>
+                <div class="bg-light rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-paint-brush text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-lg mb-2">创意设计</h3>
+                    <p class="text-gray-600">专业设计团队，将传统元素与现代审美融合，打造独特文创</p>
+                </div>
+                <div class="bg-light rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-cogs text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-lg mb-2">精工制作</h3>
+                    <p class="text-gray-600">严格把控生产工艺，确保每一件产品品质精良、细节完美</p>
+                </div>
+                <div class="bg-light rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-video-camera text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-lg mb-2">沉浸体验</h3>
+                    <p class="text-gray-600">配套文化视频，从创作到故事，全方位呈现产品背后的文化内涵</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品中心 - 已删除查看详情按钮 -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-[clamp(1.8rem,3vw,2.5rem)] text-secondary font-bold mb-4">产品中心</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">精选宜昌特色文创产品，每一件都是三峡文化的缩影</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 产品1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
+                    <div class="relative">
+                        <img src="./pages/6.jpg" alt="三峡风光折扇" class="w-full h-60 object-cover transition-transform group-hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-primary text-white text-sm font-medium py-1 px-3 rounded-full">
+                            热销
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-secondary mb-2">三峡风光折扇</h3>
+                        <p class="text-gray-600">以三峡山水为灵感，采用传统折扇工艺，扇面绘就三峡四季风光，兼具实用与艺术价值。</p>
+                    </div>
+                </div>
+                <!-- 产品2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
+                    <div class="relative">
+                        <img src="./pages/7.jpg" alt="屈原文化书签套装" class="w-full h-60 object-cover transition-transform group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-secondary mb-2">屈原文化书签套装</h3>
+                        <p class="text-gray-600">提取屈原《离骚》元素，金属书签搭配精美礼盒，是文化爱好者的收藏佳品，亦是赠礼首选。</p>
+                    </div>
+                </div>
+                <!-- 产品3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
+                    <div class="relative">
+                        <img src="./pages/8.jpg" alt="宜昌非遗布艺手包" class="w-full h-60 object-cover transition-transform group-hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-secondary text-white text-sm font-medium py-1 px-3 rounded-full">
+                            非遗
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-secondary mb-2">宜昌非遗布艺手包</h3>
+                        <p class="text-gray-600">由宜昌非遗传承人手工制作，融合土家织锦工艺与现代设计，每一款都是独一无二的艺术品。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文创故事 - 已删除阅读完整故事按钮 -->
+    <section id="stories" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-[clamp(1.8rem,3vw,2.5rem)] text-secondary font-bold mb-4">文创故事</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">每一件文创产品，都承载着一段关于宜昌文化的故事</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gradient-yi rounded-xl overflow-hidden text-white">
+                    <div class="p-8">
+                        <h3 class="font-serif text-2xl font-bold mb-4">屈原与《离骚》的文化传承</h3>
+                        <p class="mb-6">屈原，中国浪漫主义文学的奠基人，其代表作《离骚》是宜昌文化的璀璨明珠。我们的屈原文化系列文创，从《离骚》中提取“香草美人”等意象，将古籍文字与现代设计结合，让千年文化以新颖的形式走进大众生活。</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl overflow-hidden">
+                    <img src="https://picsum.photos/id/1042/800/600" alt="文创故事" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-secondary mb-2">三峡非遗的现代新生</h3>
+                        <p class="text-gray-600">宜昌拥有丰富的非遗资源，如土家族织锦、宜昌版画等。我们与非遗传承人合作，对传统工艺进行创新设计，让非遗技艺在文创产品中焕发新生，既保留了传统技艺的精髓，又符合现代审美需求。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 视频区域 -->
+    <section id="videos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-[clamp(1.8rem,3vw,2.5rem)] text-secondary font-bold mb-4">三峡印象</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">通过视频，沉浸式感受宜昌的山水人文魅力</p>
+            </div>
+            <div class="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl">
+                <img src="https://picsum.photos/id/1036/1200/675" alt="视频封面" class="w-full h-auto">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <button class="w-20 h-20 bg-primary/80 hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors">
+                        <i class="fa fa-play text-3xl"></i>
+                    </button>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                    <h3 class="font-serif text-xl font-bold text-white mb-2">《遇见宜昌：三峡文创的诞生》</h3>
+                    <p class="text-white/80">时长：5分20秒 · 跟随镜头，了解宜昌文创产品从文化挖掘到设计制作的全过程</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+                <div class="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://picsum.photos/id/1039/400/225" alt="视频缩略图" class="w-full h-40 object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <button class="w-10 h-10 bg-primary/80 hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors">
+                            <i class="fa fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium text-white bg-primary/90 inline-block py-1 px-2 rounded text-sm">非遗工艺</h4>
+                        <p class="font-medium mt-2">土家族织锦的千年传承</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://picsum.photos/id/1041/400/225" alt="视频缩略图" class="w-full h-40 object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <button class="w-10 h-10 bg-primary/80 hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors">
+                            <i class="fa fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium text-white bg-secondary/90 inline-block py-1 px-2 rounded text-sm">产品设计</h4>
+                        <p class="font-medium mt-2">三峡折扇的创意设计之路</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://picsum.photos/id/1025/400/225" alt="视频缩略图" class="w-full h-40 object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <button class="w-10 h-10 bg-primary/80 hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors">
+                            <i class="fa fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium text-white bg-primary/90 inline-block py-1 px-2 rounded text-sm">文化溯源</h4>
+                        <p class="font-medium mt-2">屈原《离骚》的现代解读</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 - 已删除所有文字内容 -->
+    <footer class="bg-secondary py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa fa-paint-brush text-primary text-2xl"></i>
+                        <span class="font-serif text-2xl font-bold text-white">宜昌文创</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fa fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fa fa-youtube-play text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 轮播图功能 - 已适配5张图片
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const carouselIndicators = document.querySelectorAll('.carousel-indicators button');
+        const carouselPrev = document.querySelector('.carousel-prev');
+        const carouselNext = document.querySelector('.carousel-next');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            carouselItems.forEach(item => item.classList.remove('active'));
+            carouselIndicators.forEach(indicator => indicator.classList.remove('active', 'bg-white'));
+            carouselIndicators.forEach(indicator => indicator.classList.add('bg-white/50'));
+            
+            carouselItems[index].classList.add('active');
+            carouselIndicators[index].classList.add('active', 'bg-white');
+            carouselIndicators[index].classList.remove('bg-white/50');
+        }
+
+        carouselNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            showSlide(currentIndex);
+        });
+
+        carouselPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            showSlide(currentIndex);
+        });
+
+        carouselIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                showSlide(currentIndex);
+            });
+        });
+
+        // 自动轮播
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            showSlide(currentIndex);
+        }, 5000);
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
